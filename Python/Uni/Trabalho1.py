@@ -2,13 +2,14 @@ import os
 from functools import reduce
 import random
 import operator
+import time
 
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def main():
-    DoExercise = 'y'
-    while DoExercise == 'y' or DoExercise == 'Y':
+    LoopExercise = 'y'
+    while LoopExercise == 'y' or LoopExercise == 'Y':
         while True:
             try:
                 cls()
@@ -65,7 +66,7 @@ def main():
                 Exercises.exercise15()
                 break
             else: print('Por favor, insira um exercício válido.')
-        DoExercise = str(input("Deseja acessar outro exercício? (y/n) \n"))
+        LoopExercise = str(input("Deseja acessar outro exercício? (y/n) \n"))
 
 class Exercises():
     def exercise1():
