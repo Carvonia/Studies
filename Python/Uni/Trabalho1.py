@@ -2,7 +2,6 @@ import os
 from functools import reduce
 import random
 import operator
-import time
 
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -296,3 +295,10 @@ class Exercises():
         print(f'A maior venda foi contabilizada em: {MaiorVenda[0]} reais.')
 
 main()
+
+class Fruit():
+    Preco = 0.0
+    Saude = 0
+    def Laranja(self):
+        self.Preco = 7.5
+        self.Saude = 2
