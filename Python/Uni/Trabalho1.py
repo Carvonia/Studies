@@ -295,10 +295,3 @@ class Exercises():
         print(f'A maior venda foi contabilizada em: {MaiorVenda[0]} reais.')
 
 main()
-
-class Fruit():
-    Preco = 0.0
-    Saude = 0
-    def Laranja(self):
-        self.Preco = 7.5
-        self.Saude = 2
