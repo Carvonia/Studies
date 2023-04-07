@@ -2,9 +2,14 @@ import os
 from functools import reduce
 import random
 import operator
+import locale
+locale.setlocale( locale.LC_ALL, '' )
 
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def format_currency(i):
+    return locale.currency(float(i), grouping=True)
 
 def main():
     LoopExercise = 'y'
@@ -270,11 +275,11 @@ class Exercises():
         for i in range(0, 1000):
             Random = random.randint(1,3)
             if Random == 1:
-                Produto1.append(random.randint(40,50))
+                Produto1.append(round(random.uniform(40, 50), 2))
             elif Random == 2:
-                Produto2.append(random.randint(70,80))
+                Produto2.append(round(random.uniform(70, 80), 2))
             elif Random == 3:
-                Produto3.append(random.randint(120,135))
+                Produto3.append(round(random.uniform(100, 135), 2))
                 
         Produto1 = tuple(sorted(Produto1, reverse=True))
         Produto2 = tuple(sorted(Produto2, reverse=True))
@@ -288,10 +293,10 @@ class Exercises():
         MaiorVenda = tuple(sorted(MaiorVenda, reverse=True))
 
         print('Registro de 1000 vendas da emprea: \n \n')
-        print(f'O numero de vendas do Produto 1 foi de: {len(Produto1)}, contabilizados em {totalProduto1} reais.')
-        print(f'Do Produto 2: {len(Produto2)} foram vendidos, gerando {totalProduto2} reais para a empresa.')
-        print(f'E do Produto 3 foram vendidos: {len(Produto3)}, gerando assim: {totalProduto3} reais. \n')
-        print(f'O valor total em vendas da loja foi de: {totalProduto1 + totalProduto2 + totalProduto3} reais.')
-        print(f'A maior venda foi contabilizada em: {MaiorVenda[0]} reais.')
+        print(f'O numero de vendas do Produto 1 foi de: {len(Produto1)}, contabilizados em {format_currency(totalProduto1)}.')
+        print(f'Do Produto 2: {len(Produto2)} foram vendidos, gerando {format_currency(totalProduto1)} para a empresa.')
+        print(f'E do Produto 3 foram vendidos: {len(Produto3)}, gerando assim: {format_currency(totalProduto3)}. \n')
+        print(f'O valor total em vendas da loja foi de: {format_currency(totalProduto1 + totalProduto2 + totalProduto3)}.')
+        print(f'A maior venda foi contabilizada em: {format_currency(MaiorVenda[0])}.')
 
 main()
