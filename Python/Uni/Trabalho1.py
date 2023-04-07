@@ -68,9 +68,12 @@ def main():
             elif Exercise == 15:
                 Exercises.exercise15()
                 break
-            else: print('Por favor, insira um exercício válido.')
-        LoopExercise = str(input("Deseja acessar outro exercício? (y/n) \n"))
-        cls()
+            else:
+                break
+        if Exercise < 16 and Exercise > 0: 
+            LoopExercise = str(input("Deseja acessar outro exercício? (y/n) \n"))
+            cls()
+        else: print('Exercício inválido, tente novamente!\n')
 
 class Exercises():
     def exercise1():
@@ -158,12 +161,13 @@ class Exercises():
             try:
                 Dividendo = float(input('Insira o Dividendo da operação: '))
                 Divisor = float(input('Insira o Divisor da operação: '))
+                ResultadoDivisao = Dividendo/Divisor
+                if ResultadoDivisao == 0:
+                    print('Divisão indefinida')
+                else: print(f'O resultado da divisão é {ResultadoDivisao}. \n')
                 break
-            except ValueError:
-                print('Utilize apenas números')
-
-        ResultadoDivisao = Dividendo/Divisor
-        print(f'O resultado da divisão é {ResultadoDivisao}. \n')
+            except ZeroDivisionError: print('É impossível dividir por 0, tente novamente.\n')
+            except ValueError: print('Utilize apenas números!\n')
 
     def exercise9():
         while True:
