@@ -1,19 +1,18 @@
-
 class Multiply():
-    def __init__(self, Val1, Val2):
-        self.Val1 = Val1
-        self.Val2 = Val2
-
     @classmethod
-    def ChangeShop(cls, ShopName):
-        cls.ShopName = ShopName
-
-    def operate(self):
-        print(self.Val1 * self.Val2)
+    def operate(self, Val1, Val2):
+        x = Val1 * Val2
+        return x
 
 Numbers = []
 for i in range(0, 2):
-    Numbers.append(int(input('Type a number please: ')))
+    while True:
+        try:
+            Numbers.append(int(input('Type a number please: ')))
+            break
+        except ValueError:
+            print('Only numbers are allowed! \n')
+        
 
-operation = Multiply(Numbers[0], Numbers[1])
-operation.operate()
+operation = Multiply.operate(Numbers[0], Numbers[1])
+print(f'\nThe result of the operation is: {operation}')

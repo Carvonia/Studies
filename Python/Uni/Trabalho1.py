@@ -11,7 +11,6 @@ def main():
     while LoopExercise == 'y' or LoopExercise == 'Y':
         while True:
             try:
-                cls()
                 Exercise = int(input('Qual exercício você deseja acessar? \n'))
                 break
 
@@ -66,6 +65,7 @@ def main():
                 break
             else: print('Por favor, insira um exercício válido.')
         LoopExercise = str(input("Deseja acessar outro exercício? (y/n) \n"))
+        cls()
 
 class Exercises():
     def exercise1():
