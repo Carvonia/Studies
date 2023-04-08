@@ -8,6 +8,7 @@ def cls():
     
 def main(p_choice):
     cls()
+    p_choice = p_choice.capitalize()
     cpu_choice = random.choice(warriors)
     
     print('Your Warrior: '+p_choice)
@@ -21,7 +22,7 @@ def main(p_choice):
         print(f'\nYou lose! :(')
     else:
         cls()
-        print('You picked an invalid number, try again.\n')
+        print('You picked an invalid warrior, try again.\n')
         return 0
     loop = str(input('Do you want to play again? (y/n): '))
     cls()
