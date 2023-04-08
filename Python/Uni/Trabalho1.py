@@ -255,21 +255,39 @@ class Exercises():
     def exercise14():
         EstoqueJogos = []
         EstoqueVendidos = []
+        Tempo = 0
 
         for i in range(0,64):
             EstoqueJogos.append(random.randint(0, 200))
-            EstoqueVendidos.append(random.randint(0, 200))
+            EstoqueVendidos.append(random.randint(0, EstoqueJogos[Tempo]))
+            Tempo =+ 1
                 
         IngressoVendido = (reduce(operator.add, EstoqueVendidos))
         IngressoDisponivel = (reduce(operator.add, EstoqueJogos))
         IngressoNaoVendido = IngressoDisponivel - IngressoVendido
         Treshold20 = 180
         Jogos90 = len([i for i in EstoqueVendidos if i > Treshold20])
-                
+        
         print(f'O numero de tickets totais é de: {IngressoDisponivel},')
         print(f'o numero de tickets que foram vendidos é: {IngressoVendido},')
         print(f'o numero de tickets que não foram vendidos é de: {IngressoNaoVendido},')
-        print(f'o numero de jogos com mais de 90% de ingressos vendidos foi de: {Jogos90} .')
+        print(f'o numero de jogos com mais de 90% de ingressos vendidos foi de: {Jogos90}.\n')
+        
+        while True:
+            try:
+                Jogos = (int(input('Qual jogo você deseja analisar? ')) -1)
+                print(f'O jogo {Jogos+1} tem {EstoqueJogos[Jogos]} ingressos totais e {EstoqueVendidos[Jogos]} vendidos.')
+                print(f'Este jogo tem atualmente {EstoqueJogos[Jogos] - EstoqueVendidos[Jogos]} ingressos disponíveis\n')
+                xr = str(input('Deseja verificar outro jogo?(y/n) '))
+                cls()
+                if xr == 'y' or xr == 'Y': continue
+                else: break
+            except ValueError:
+                cls()
+                print('Utilize apenas números.\n')
+            except IndexError:
+                cls()
+                print('Jogo inválido, tente novamente.\n')
         
     def exercise15():
         Produto1 = []
