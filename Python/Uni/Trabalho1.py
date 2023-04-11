@@ -217,9 +217,10 @@ class Exercises():
         for i in range (1, 10):
             while True:
                 try:
-                    Advinha = int(input('Tente advinhar o número aleatório! '))
+                    Advinha = int(input('Tente advinhar o número aleatório: '))
                     if Advinha == RandomNumb:
                         print(f'\nParabéns! O número realmente era {RandomNumb}!!!')
+                        print(f'Você conseguiu adivinhar em {i} tentativas!!!')
                         i = 11
                         break
                     elif Advinha > RandomNumb:
