@@ -1,0 +1,17 @@
+Por: Matheus Cunha Nogueira
+Matrícula: 06006159
+
+Exercício 2:
+O código inicializa as variáveis "n" e "m" com os valores 4 e 10. 
+Ele então cria uma matriz bidimensional com tamanho baseado nas váriaveis, sendo assim 4 por 10, e vai preenchendo todas as entradas com o valor 0. 
+Então ele imprime cada linha dessa matriz. 
+O resultado final se torna uma matriz de 4 linhas, cada contendo 10 zeros, essa matriz é exibida como saída do algoritmo.
+
+Exercício 3:
+(b) A asserção I  ́e uma proposição ̧falsa, e a II ́e uma proposição verdadeira.
+
+Exercício 4:
+(a) 4, 18, 39, 13, 67
+
+Exercício 5:
+(d) O algoritmo está somando os elementos da lista.
